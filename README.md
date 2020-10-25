@@ -10,6 +10,8 @@ A GBA emulator or just some knowledge of how the gameboy advance works.
 
 Download as a zip and open the project, run the .gba file in a gameboy emulator, IMPORTANT make sure you have your sound turned way down and probably something to remind you of how the song actually sounds because even though it may be the correct notes, it's still pretty unrecognisable.
 
+If you want to build the project yourself make sure you have gbadevpro kit installed then just run make
+
 ## Running the tests
 
 Run in a GBA emulator
