@@ -24,3 +24,4 @@ Felix England
 
 ## Aknowledments
 * https://www.coranac.com/tonc/text/
+* https://noobnotes.net/never-gonna-give-rick-astley/
