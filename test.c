@@ -25,7 +25,7 @@ void note_play(int note, int octave) {
 
 int main() {
 	// from tonc-sn1
-    REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;
+	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;
 
 	irq_init(NULL);
 	irq_add(II_VBLANK, NULL);
@@ -47,27 +47,27 @@ int main() {
 	REG_SND1CNT    = SSQR_ENV_BUILD(12, 0, 7) | SSQR_DUTY1_2;
 	REG_SND1FREQ   = 0;
     
-    // just tries to play never gonna give you up on the gameboy
-    const int notes[] = {	
-    NOTE_B, NOTE_CIS, NOTE_D, NOTE_D, NOTE_E, NOTE_CIS, NOTE_B, NOTE_A, 
-    NOTE_B, NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_A, NOTE_A, NOTE_A, NOTE_E,
-    NOTE_B, NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_D, NOTE_E, NOTE_CIS, NOTE_B, NOTE_CIS, NOTE_B, NOTE_A,
-    NOTE_B, NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_A, NOTE_E, NOTE_E, NOTE_E, NOTE_FIS, NOTE_E,
-    NOTE_D, NOTE_E, NOTE_FIS, NOTE_D, NOTE_E, NOTE_E, NOTE_E, NOTE_FIS, NOTE_E, NOTE_A,
-    NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_E, NOTE_FIS, NOTE_E,
-    NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_FIS, NOTE_FIS, NOTE_E,
-    NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_E, NOTE_E, NOTE_D, NOTE_CIS, NOTE_B,
-    NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_D, NOTE_E, NOTE_CIS, NOTE_A, NOTE_A, NOTE_E, NOTE_D,
-    NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_FIS, NOTE_FIS, NOTE_E,
-    NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_A, NOTE_CIS, NOTE_D, NOTE_CIS, NOTE_B,
-    NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_D, NOTE_E, NOTE_CIS, NOTE_A, NOTE_A, NOTE_E, NOTE_D	};
-
-    int i;
-    // loop through all the notes and play them
-    for(i=0; i < 111; i++) {
-        note_play(notes[i], notes[i]);
-        VBlankIntrDelay(30);
-    }
-    // don't continue onto anything
-    return 0;
+	// just tries to play never gonna give you up on the gameboy
+	const int notes[] = {	
+	NOTE_B, NOTE_CIS, NOTE_D, NOTE_D, NOTE_E, NOTE_CIS, NOTE_B, NOTE_A, 
+	NOTE_B, NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_A, NOTE_A, NOTE_A, NOTE_E,
+	NOTE_B, NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_D, NOTE_E, NOTE_CIS, NOTE_B, NOTE_CIS, NOTE_B, NOTE_A,
+	NOTE_B, NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_A, NOTE_E, NOTE_E, NOTE_E, NOTE_FIS, NOTE_E,
+	NOTE_D, NOTE_E, NOTE_FIS, NOTE_D, NOTE_E, NOTE_E, NOTE_E, NOTE_FIS, NOTE_E, NOTE_A,
+	NOTE_B, NOTE_CIS, NOTE_D, NOTE_B, NOTE_E, NOTE_FIS, NOTE_E,
+	NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_FIS, NOTE_FIS, NOTE_E,
+	NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_E, NOTE_E, NOTE_D, NOTE_CIS, NOTE_B,
+	NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_D, NOTE_E, NOTE_CIS, NOTE_A, NOTE_A, NOTE_E, NOTE_D,
+	NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_FIS, NOTE_FIS, NOTE_E,
+	NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_A, NOTE_CIS, NOTE_D, NOTE_CIS, NOTE_B,
+	NOTE_A, NOTE_B, NOTE_D, NOTE_B, NOTE_D, NOTE_E, NOTE_CIS, NOTE_A, NOTE_A, NOTE_E, NOTE_D	};
+	
+	int i;
+	// loop through all the notes and play them
+	for(i=0; i < 111; i++) {
+		note_play(notes[i], notes[i]);
+		VBlankIntrDelay(30);
+	}
+	// don't continue onto anything
+	return 0;
 }
